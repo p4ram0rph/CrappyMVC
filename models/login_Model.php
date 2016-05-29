@@ -15,8 +15,7 @@ class login_Model extends model{
 		if( isset( $_POST['username'], $_POST['password'] ) ):
                     
                     $query = $this->db->prepare( 
-                            "SELECT * FROM users WHERE username=:username "
-                            . "AND password=:password" );
+                            'SELECT * FROM users WHERE username=:username AND password=:password' );
                 
                     $query->execute( array( 
                         ':username' => $_POST['username'],
