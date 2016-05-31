@@ -15,12 +15,8 @@ class AuthSys {
     }
     public function isAuthenticate( ) {
         
-        if( $this->session->get( 'loggedin' ) !== NULL and $this->session->get('username') !== NULL ):
-            
-            return True;
-        
-        endif;
-        
+        return ( $this->session->get( 'loggedin' ) !== NULL and $this->session->get('username') !== NULL );
+
     }
     public function Login( $username ){
         
