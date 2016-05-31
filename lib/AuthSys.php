@@ -7,7 +7,7 @@ class AuthSys {
         $this->session = $session;
         
     }
-    public function isAuthenticate( ) {
+    public function isAuthenticated( ) {
         
         return ( $this->session->get( 'loggedin' ) !== NULL and $this->session->get('username') !== NULL );
 
@@ -22,5 +22,8 @@ class AuthSys {
         
         return $this->session->get('username');
         
+    }
+    public function Logout( ){
+        $this->session->destroy();
     }
 }

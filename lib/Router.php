@@ -36,6 +36,7 @@ class Router{
 		if ( @method_exists($this->_controller, $uri[1]) ):
 
 			$this->_method = $uri[1];
+                        unset($uri[1]);
 
 		endif;
 

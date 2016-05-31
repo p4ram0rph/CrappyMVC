@@ -11,19 +11,21 @@ class login_Model extends model{
 
 
 	public function auth( ){
+            
+            
 
-		if( isset( $_POST['username'], $_POST['password'] ) ):
+            if( isset( $_POST['username'], $_POST['password'] ) ):
                     
-                    $query = $this->db->prepare( 
+                $query = $this->db->prepare( 
                             'SELECT * FROM users WHERE username=:username AND password=:password' );
                 
-                    $query->execute( array( 
-                        ':username' => $_POST['username'],
-                        ':password' => $_POST['password']                        
+                $query->execute( array( 
+                    ':username' => $_POST['username'],
+                    ':password' => $_POST['password']                        
                     ) );
-             
-                    return $query->fetch( );
-                endif;
+                
+                return $query->fetch( );
+            endif;
 	}
        
 }

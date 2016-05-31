@@ -32,7 +32,7 @@ class Session
 		'session.entropy_length'		  => 0,
 		'session.cookie_path'                     => '/',
 		'session.serialize_hander'		  => 'php',
-		'session.hash_bits_per_character' => 4,
+		'session.hash_bits_per_character'         => 4,
 		/**
 		*
 		* @internal any non-zero value will use the Windows Random API (CryptGenRandom) on Windows
@@ -65,7 +65,8 @@ class Session
 
 	}
 
-	public function DestroySess( ){
+	public function destroy( ){
+            
 		session_destroy( );
 	}
 
@@ -76,25 +77,8 @@ class Session
 	}
         public function get( $sessName ){
 
-		return $this->sess[$sessName]; 
+		return @$this->sess[$sessName]; 
 	}
-
-
-	private function __xmpty( $value ){
-
-		if(empty($value)):
-			
-			return true;
-		endif;
-
-		/*
-		* I know how much you hate !empty
-		*/
-
-		return false;
-
-	}
-
 
 
 }
