@@ -2,13 +2,7 @@
 
 class AuthSys {
     
-    public function __construct( $session ) {
-        
-        if( !is_a($session, 'Session') ):
-            
-            throw new \Exception( 'Class error' ); 
-               
-        endif;
+    public function __construct( Session $session ) {
         
         $this->session = $session;
         
